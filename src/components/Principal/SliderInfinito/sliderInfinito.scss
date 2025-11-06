@@ -1,0 +1,38 @@
+.slider {
+    width: 75vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider .slide-track {
+    display: flex;
+    animation: scroll 50s linear infinite;
+    -webkit-animation: scroll 50s linear infinite;
+    width: calc(220px * 14); /* Ajusta el cálculo según el ancho de las imágenes más el margen */
+}
+
+.slider .slide {
+    width: 200px;
+    margin-right: 20px; /* Espacio mínimo entre las diapositivas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider .slide img {
+    width: 200px; /* Ajusta al mismo ancho */
+    height: 150px; /* Ajusta a la misma altura */
+    object-fit: contain; /* Mantiene la proporción de las imágenes */
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-220px * 7)); /* Ajusta según el ancho de las imágenes más el margen */
+        transform: translateX(calc(-220px * 7)); /* Ajusta según el ancho de las imágenes más el margen */
+    }
+}

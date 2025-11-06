@@ -1,0 +1,43 @@
+# ===== CACHE CONFIGURATION =====
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Assets JS/CSS con hash - cache por 1 año
+  <FilesMatch "\.(js|css)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, immutable"
+  </FilesMatch>
+  
+  # Imágenes - cache por 1 mes
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    ExpiresDefault "access plus 1 month"
+    Header set Cache-Control "public"
+  </FilesMatch>
+  
+  # Fonts - cache por 1 año
+  <FilesMatch "\.(woff|woff2|ttf|eot)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public"
+  </FilesMatch>
+  
+  # HTML - sin cache
+  <FilesMatch "\.html$">
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Habilitar compresión gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# ===== REACT ROUTER CONFIGURATION =====
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
