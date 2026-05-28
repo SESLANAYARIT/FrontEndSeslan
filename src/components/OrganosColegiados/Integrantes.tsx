@@ -2,7 +2,7 @@ import asen from "../../assets/webp/Comite/asen.webp";
 import bg from "../../assets/webp/Comite/bg.webp";
 import cpcnay from "../../assets/webp/Comite/cpcnay.webp";
 import FGE from "../../assets/webp/Comite/FGE.webp";
-import ITAI from "../../assets/webp/Comite/ITAI.webp";
+//import ITAI from "../../assets/webp/Comite/ITAI.webp";
 import pj from "../../assets/webp/Comite/pj.webp";
 import tja from "../../assets/webp/Comite/tja.webp";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -34,7 +34,7 @@ export const Integrantes = () => {
             fallback: "BG",
           },
           {
-            name: "Dra. Rosa María Domínguez González",
+            name: "María Verdín Hernández",
             position:
               "Representante del Consejo de la Judicatura del Poder Judicial del Estado de Nayarit",
             avatar: tja,

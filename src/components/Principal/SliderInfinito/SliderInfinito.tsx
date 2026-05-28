@@ -3,7 +3,7 @@ import asen from "src/assets/slider/Comite/asen.webp";
 import bg from "src/assets/slider/Comite/bg.webp";
 import cpcnay from "src/assets/slider/Comite/cpcnay.webp";
 import FGE from "src/assets/slider/Comite/FGE.webp";
-import ITAI from "src/assets/slider/Comite/ITAI.webp";
+// import ITAI from "src/assets/slider/Comite/ITAI.webp";
 import pj from "src/assets/slider/Comite/pj.webp";
 import tja from "src/assets/slider/Comite/tja.webp";
  const SliderInfinito = () => {
@@ -33,11 +33,11 @@ import tja from "src/assets/slider/Comite/tja.webp";
             <img src={FGE} alt="" loading="lazy"/>
           </div>
         </a>
-        <a href="https://portal.itainayarit.org/" aria-label="itai">
+        {/* <a href="https://portal.itainayarit.org/" aria-label="itai">
           <div className="slide">
             <img src={ITAI} alt="" loading="lazy"/>
           </div>
-        </a>
+        </a> */}
         <a href="https://www.tsjnay.gob.mx/" aria-label="tsjnay">
           <div className="slide">
             <img src={pj} alt="" loading="lazy"/>
@@ -68,11 +68,11 @@ import tja from "src/assets/slider/Comite/tja.webp";
             <img src={FGE} alt="" loading="lazy"/>
           </div>
         </a>
-        <a href="https://portal.itainayarit.org/" aria-label="itai">
+        {/* <a href="https://portal.itainayarit.org/" aria-label="itai">
           <div className="slide">
             <img src={ITAI} alt="" loading="lazy"/>
           </div>
-        </a>
+        </a> */}
         <a href="https://www.tsjnay.gob.mx/" aria-label="tsjnay">
           <div className="slide">
             <img src={pj} alt="" loading="lazy"/>

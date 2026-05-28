@@ -32,6 +32,9 @@ export enum Committee {
   CE = "CE", //Comisión Ejecutiva
   CET = "CET", //Comite de etica
   CT = "CT", //Comite Transparencia
+  CCA = "CCA", //Comité Coordinador de Archivo
+  SCA = "SCA", //Subcomite de Adquisiciones
+  COCODI = "COCODI", //COCODI
   SLF = "SLF", //Sistema Local de Fiscalización
   SA = "SA", // Sistema de Archivos
 }

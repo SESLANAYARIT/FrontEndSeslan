@@ -45,7 +45,6 @@ const Normatividad = () => {
   }, []);
 
   const groupedDocuments = useMemo(() => {
-    console.log(data);
     const filtered = data.filter((doc) => {
       const matchesSearch =
         doc.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

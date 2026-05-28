@@ -1,4 +1,4 @@
-import { DocumentsCET } from "src/interfaces/cet.interface";
+import { DocumentsComites } from "src/interfaces/cet.interface";
 import { Article33, CardsInfo33 } from "../interfaces/articulo33.interfaces";
 import { CCDocuments } from "../interfaces/cc.interfaces";
 import {
@@ -58,8 +58,17 @@ export const getSevacInfo = (): Promise<SevacDataPoint[]> =>
 export const getCCDocuments = (): Promise<CCDocuments> =>
   publicClient.get("/document/public/CC").then((res) => res.data);
 
-export const getCETDocuments = (): Promise<DocumentsCET> =>
+export const getCETDocuments = (): Promise<DocumentsComites> =>
   publicClient.get("/document/public/CET").then((res) => res.data);
+
+export const getCocodiDocuments = (): Promise<DocumentsComites> =>
+  publicClient.get("/document/public/COCODI").then((res) => res.data);
+
+export const getAdquisicionesDocuments = (): Promise<DocumentsComites> =>
+  publicClient.get("/document/public/SCA").then((res) => res.data);
+
+export const getArchivosDocuments = (): Promise<DocumentsComites> =>
+  publicClient.get("/document/public/CCA").then((res) => res.data);
 
 export const getPPISecretaria = (): Promise<PPIInterface> =>
   publicClient.get("/document/public/informes_planes").then((res) => res.data);

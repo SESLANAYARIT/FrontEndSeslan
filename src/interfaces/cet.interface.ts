@@ -1,8 +1,9 @@
-export interface DocumentsCET {
-    normas: Norma[];
+export interface DocumentsComites {
+    normas: ComiteDocument[];
+    planes: ComiteDocument[];
 }
 
-export interface Norma {
+ interface ComiteDocument {
     topico:   string;
     title:    string;
     fileData: FileData;

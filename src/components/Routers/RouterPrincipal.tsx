@@ -8,57 +8,62 @@ import { Principal } from "../Principal/Principal";
 
 // TODO lo demás es lazy load
 import { loadable } from "../Loadable/loadable";
+import ComiteArchivo from "../Secretaria_Ejecutiva/comite/Archivo/Comite_Archivo";
+import ComiteAdquisiciones from "../Secretaria_Ejecutiva/comite/SCA/Adquisiciones";
+import ComiteCocodi from "../Secretaria_Ejecutiva/comite/Cocodi/Cocodi";
 
 // Páginas "importantes" pero NO críticas - también lazy
 const About = loadable(() => import("../Nosotros/About"));
 const Noticias = loadable(() => import("../Publicaciones/Noticias/Noticias"));
 const Noticia = loadable(() => import("../Publicaciones/Noticias/Noticia"));
 const Convocatorias = loadable(
-  () => import("../Publicaciones/Convocatorias/Convocatorias")
+  () => import("../Publicaciones/Convocatorias/Convocatorias"),
 );
 const Articulo33 = loadable(
-  () => import("../Transparencia/Articulo33/Articulo33")
+  () => import("../Transparencia/Articulo33/Articulo33"),
 );
 const ArticuloIndividual = loadable(
   () =>
-    import("../Transparencia/Articulo33/ArticuloIndividual/ArticuloIndividual")
+    import("../Transparencia/Articulo33/ArticuloIndividual/ArticuloIndividual"),
 );
 
 // Resto de páginas
 const ConvCarCom = loadable(
-  () => import("../Secretaria_Ejecutiva/Convenios_CartasCompromiso/ConvCarCom")
+  () => import("../Secretaria_Ejecutiva/Convenios_CartasCompromiso/ConvCarCom"),
 );
 const Comite = loadable(() => import("../Transparencia/Comite/Comite"));
 const CuentaPublica = loadable(
-  () => import("../Financieros/CuentaPublica/CuentaPublica")
+  () => import("../Financieros/CuentaPublica/CuentaPublica"),
 );
 const Sevac = loadable(() => import("../Financieros/Sevac/Sevac"));
 const ComiteCoordinador = loadable(
-  () => import("../OrganosColegiados/ComiteCoordinador/ComiteCoordinador")
+  () => import("../OrganosColegiados/ComiteCoordinador/ComiteCoordinador"),
 );
 const OrganoDeGobierno = loadable(
-  () => import("../OrganosColegiados/OrganoDeGobierno/OrganoDeGobierno")
+  () => import("../OrganosColegiados/OrganoDeGobierno/OrganoDeGobierno"),
 );
 const ComisionEjecutiva = loadable(
-  () => import("../OrganosColegiados/ComisionEjecutiva/ComisionEjecutiva")
+  () => import("../OrganosColegiados/ComisionEjecutiva/ComisionEjecutiva"),
 );
 const Informes = loadable(
-  () => import("../Secretaria_Ejecutiva/Informes_programas_anuales/Informes")
+  () => import("../Secretaria_Ejecutiva/Informes_programas_anuales/Informes"),
 );
 const ComiteEtica = loadable(
-  () => import("../Secretaria_Ejecutiva/Comite_Etica/ComiteEtica")
+  () => import("../Secretaria_Ejecutiva/comite/Comite_Etica/ComiteEtica"),
 );
 const Normatividad = loadable(
-  () => import("../Secretaria_Ejecutiva/Normatividad/Normatividad")
+  () => import("../Secretaria_Ejecutiva/Normatividad/Normatividad"),
 );
 const AvisoPrivacidadSimplificado = loadable(
-  () => import("../Politicas/Simplificado")
+  () => import("../Politicas/Simplificado"),
 );
 const AvisoPrivacidadTalleres = loadable(
-  () => import("../Politicas/Especifico")
+  () => import("../Politicas/Especifico"),
 );
 const PIntegral = loadable(() => import("../Politicas/PIntegral"));
 const PoliticasUsoPrivacidad = loadable(() => import("../Politicas/Seguridad"));
+
+const VisorLibroPage = loadable(() => import("../Visor/VisorPage"));
 
 export const RouterPrincipal = () => {
   const router = createBrowserRouter([
@@ -131,6 +136,18 @@ export const RouterPrincipal = () => {
           element: <ComiteEtica />,
         },
         {
+          path: "comite_Archivo",
+          element: <ComiteArchivo />,
+        },
+        {
+          path: "comite_Adquisiciones",
+          element: <ComiteAdquisiciones />,
+        },
+        {
+          path: "Cocodi",
+          element: <ComiteCocodi />,
+        },
+        {
           path: "ConCc",
           element: <ConvCarCom />,
         },
@@ -153,6 +170,10 @@ export const RouterPrincipal = () => {
         {
           path: "PUsoSeguridad",
           element: <PoliticasUsoPrivacidad />,
+        },
+        {
+          path: "visor-libro",
+          element: <VisorLibroPage />,
         },
       ],
     },

@@ -89,12 +89,16 @@ export default {
 					'50%': { transform: 'scale(1.05)' },
 				},
 			},
-		animation: {
-			'accordion-down': 'accordion-down 0.2s ease-out',
-			'accordion-up': 'accordion-up 0.2s ease-out',
-			pulseCustom: 'pulseCustom 1s ease-in-out infinite',
+			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				pulseCustom: 'pulseCustom 1s ease-in-out infinite',
+			},
+			rotate: {
+				'y-6': 'rotateY(6deg)',
+				'y-12': 'rotateY(12deg)',
+			}
 		}
-	}
-},
-plugins: [tailwindcssAnimate],
+	},
+	plugins: [tailwindcssAnimate],
 }

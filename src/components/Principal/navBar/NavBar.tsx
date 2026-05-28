@@ -29,7 +29,7 @@ export const NavBar = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleToggle = (
     menuRef: RefObject<HTMLDivElement | HTMLButtonElement>,
-    menusToClose: RefObject<HTMLDivElement | HTMLButtonElement>[]
+    menusToClose: RefObject<HTMLDivElement | HTMLButtonElement>[],
   ) => {
     menuRef.current?.classList.toggle("hidden");
     menusToClose.forEach((menu) => {
@@ -107,23 +107,23 @@ export const NavBar = () => {
     button.current?.addEventListener("click", handleButtonClick);
     dropdownButton.current?.addEventListener(
       "click",
-      handleDropdownButtonClick
+      handleDropdownButtonClick,
     );
     dropdownButton2.current?.addEventListener(
       "click",
-      handleDropdownButtonClick2
+      handleDropdownButtonClick2,
     );
     dropdownButton3.current?.addEventListener(
       "click",
-      handleDropdownButtonClick3
+      handleDropdownButtonClick3,
     );
     dropdownButton4.current?.addEventListener(
       "click",
-      handleDropdownButtonClick4
+      handleDropdownButtonClick4,
     );
     doubleDropdDownButton.current?.addEventListener(
       "click",
-      handleDoubleDropdownButtonClick
+      handleDoubleDropdownButtonClick,
     );
 
     // Cleanup function to remove event listeners
@@ -132,23 +132,23 @@ export const NavBar = () => {
       button.current?.removeEventListener("click", handleButtonClick);
       dropdownButton.current?.removeEventListener(
         "click",
-        handleDropdownButtonClick
+        handleDropdownButtonClick,
       );
       dropdownButton2.current?.removeEventListener(
         "click",
-        handleDropdownButtonClick2
+        handleDropdownButtonClick2,
       );
       dropdownButton3.current?.removeEventListener(
         "click",
-        handleDropdownButtonClick3
+        handleDropdownButtonClick3,
       );
       dropdownButton4.current?.removeEventListener(
         "click",
-        handleDropdownButtonClick4
+        handleDropdownButtonClick4,
       );
       doubleDropdDownButton.current?.removeEventListener(
         "click",
-        handleDoubleDropdownButtonClick
+        handleDoubleDropdownButtonClick,
       );
     };
   }, []);
@@ -157,7 +157,11 @@ export const NavBar = () => {
     <nav className="bg-white border-gray-200 dark:bg-gray-400 dark:border-gray-700 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center" aria-label="logo">
-        <img src={SecretariaEjecutiva} className="w-60 h-auto" alt="Secretaria Ejecutiva" />
+          <img
+            src={SecretariaEjecutiva}
+            className="w-60 h-auto"
+            alt="Secretaria Ejecutiva"
+          />
         </Link>
         <button
           ref={button}
@@ -300,7 +304,26 @@ export const NavBar = () => {
                     </Link>
                   </li>
 
-                  <li aria-labelledby="dropdownNavbarLink">
+                  <li>
+                    <Link
+                      to="cuentaPublica"
+                      className="block px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-400 dark:text-gray-400 dark:hover:text-white"
+                      aria-label="cuentaPublica"
+                    >
+                      Cuenta Pública
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="sevac"
+                      className="block px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-400 dark:text-gray-400 dark:hover:text-white"
+                      aria-label="sevac"
+                    >
+                      SEVAC
+                    </Link>
+                  </li>
+
+                  {/* <li aria-labelledby="dropdownNavbarLink">
                     <button
                       ref={doubleDropdDownButton}
                       data-dropdown-toggle="doubleDropdown"
@@ -353,6 +376,156 @@ export const NavBar = () => {
                         </li>
                       </ul>
                     </div>
+                  </li> */}
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <button
+                ref={dropdownButton4}
+                data-dropdown-toggle="dropdownNavbar"
+                className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-200 hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-amber-900 md:p-0 md:w-auto dark:text-white md:dark:hover:text-black dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-600 md:dark:hover:bg-transparent"
+              >
+                Secretaría Ejecutiva
+                <svg
+                  className="w-2.5 h-2.5 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              {/* Dropdown menu */}
+              <div
+                ref={dropDownMenu4}
+                className="absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-300 dark:divide-gray-600"
+              >
+                <ul
+                  className="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <Link
+                      to="informes_Seslan"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                      aria-label="informes_Seslan"
+                    >
+                      Informes y Programas Anuales
+                    </Link>
+                  </li>
+                  <li aria-labelledby="dropdownNavbarLink">
+                    <button
+                      ref={doubleDropdDownButton}
+                      data-dropdown-toggle="doubleDropdown"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                    >
+                      Comités
+                      <svg
+                        className="w-2.5 h-2.5 ml-2.5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="m1 1 4 4 4-4"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      ref={doubleDropdown}
+                      className="z-10 absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-100 transform translate-x-44"
+                    >
+                      <ul
+                        className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="doubleDropdownButton"
+                      >
+                        <li>
+                          <Link
+                            to="comite_Etica"
+                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                            aria-label="comite_Etica"
+                          >
+                            Comité de Ética
+                          </Link>
+                        </li>
+                      </ul>
+                      <ul
+                        className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="doubleDropdownButton"
+                      >
+                        <li>
+                          <Link
+                            to="comite_Archivo"
+                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                            aria-label="comite_Etica"
+                          >
+                            Grupo Interdisciplinario de Archivo
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="comite_Adquisiciones"
+                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                            aria-label="comite_Etica"
+                          >
+                            SubComité de Adquisiciones
+                          </Link>
+                        </li>
+
+                        <li>
+                          <Link
+                            to="Cocodi"
+                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                            aria-label="comite_Etica"
+                          >
+                            COCODI
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <Link
+                      to="ConCc"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                      aria-label="ConCc"
+                    >
+                      Convenios y Cartas Compromiso
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="https://pdlseslan.mx/"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                      aria-label="pdlseslan.mx"
+                    >
+                      Plataforma Digital Local
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="seslan_normatividad"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
+                      aria-label="seslan_normatividad"
+                    >
+                      Normatividad
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -415,87 +588,6 @@ export const NavBar = () => {
                       aria-label="c_ejecutiva"
                     >
                       Comisión Ejecutiva
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <button
-                ref={dropdownButton4}
-                data-dropdown-toggle="dropdownNavbar"
-                className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-200 hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-amber-900 md:p-0 md:w-auto dark:text-white md:dark:hover:text-black dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-600 md:dark:hover:bg-transparent"
-              >
-                Secretaría Ejecutiva
-                <svg
-                  className="w-2.5 h-2.5 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              {/* Dropdown menu */}
-              <div
-                ref={dropDownMenu4}
-                className="absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-300 dark:divide-gray-600"
-              >
-                <ul
-                  className="py-2 text-sm text-gray-700 dark:text-gray-400"
-                  aria-labelledby="dropdownLargeButton"
-                >
-                  <li>
-                    <Link
-                      to="informes_Seslan"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
-                      aria-label="informes_Seslan"
-                    >
-                      Informes y Programas Anuales
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="comite_Etica"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
-                      aria-label="comite_Etica"
-                    >
-                      Comité de Ética
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="ConCc"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
-                      aria-label="ConCc"
-                    >
-                      Convenios y Cartas Compromiso
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="https://pdlseslan.mx/"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
-                      aria-label="pdlseslan.mx"
-                    >
-                      Plataforma Digital Local
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="seslan_normatividad"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 dark:hover:text-white"
-                      aria-label="seslan_normatividad"
-                    >
-                      Normatividad
                     </Link>
                   </li>
                 </ul>
