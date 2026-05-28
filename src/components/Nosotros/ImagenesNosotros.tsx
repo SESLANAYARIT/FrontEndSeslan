@@ -21,18 +21,18 @@ export const ImagenesNosotros = () => {
           <ImagenNosotrosItem
             source={secretario}
             title="Secretario Ejecutivo"
-            name="M.D Juan Carlos Alvarado Vázquez"
+            name="M.D. Juan Carlos Alvarado Vázquez"
             
           />
           <ImagenNosotrosItem
             source={administracion}
             title="Directora de Administación"
-            name="Lic.Marisol Ramírez Pérez"
+            name="Lic. Marisol Ramírez Pérez"
           />
           <ImagenNosotrosItem
             source={juridico}
             title="Director de Asuntos Jurídicos"
-            name="Lic.Juan Carlos Silva Rivera"
+            name="Lic. Cynthia Stephania Rivas Varela"
           />
           <ImagenNosotrosItem
             source={vinculacion}

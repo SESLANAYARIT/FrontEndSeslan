@@ -27,9 +27,9 @@ export const Integrantes = () => {
             fallback: "FECC",
           },
           {
-            name: "C.P.A. Gladis Flores Contreras",
+            name: "Lic. José Roberto Valencia Salazar",
             position:
-              "Titular de la Secretaría Para la Honestidad y Buena Gobernanza",
+              "Secretario para la Honestidad y Buena Gobernanza",
             avatar: bg,
             fallback: "BG",
           },
@@ -40,13 +40,13 @@ export const Integrantes = () => {
             avatar: tja,
             fallback: "TJA",
           },
-          {
-            name: "Mtra. Alejandra Langarica Ruiz",
-            position:
-              "Comisionada Presidenta del Instituto de Transparencia, Acceso a la Información y Protección de Datos Personales, del Estado de Nayarit",
-            avatar: ITAI,
-            fallback: "ITAI",
-          },
+          // {
+          //   name: "Mtra. Alejandra Langarica Ruiz",
+          //   position:
+          //     "Comisionada Presidenta del Instituto de Transparencia, Acceso a la Información y Protección de Datos Personales, del Estado de Nayarit",
+          //   avatar: ITAI,
+          //   fallback: "ITAI",
+          // },
           {
             name: "Mtra. Irma Carmina Cortés Hernández",
             position:
